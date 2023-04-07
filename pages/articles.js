@@ -8,10 +8,22 @@ import { Article } from "../components/Article";
 
 const Index = ({ articles, navigation, settings }) => {
   return (
-    <div>
-      <h1>Documentation AWS</h1>
-      <p>Generate logs in cloudwatch logs</p>
-    </div>
+    <Layout
+      withHeaderDivider={false}
+      navigation={navigation}
+      settings={settings}
+    >
+      <Head>
+        <title>{prismicH.asText(settings.data.name)}</title>
+      </Head>
+      <Bounded size="widest">
+        <ul className="grid grid-cols-1 gap-16">
+          {articles.map((article) => (
+            <Article key={article.id} article={article} />
+          ))}
+        </ul>
+      </Bounded>
+    </Layout>
   );
 };
 
