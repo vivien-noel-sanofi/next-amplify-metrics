@@ -61,6 +61,13 @@ export default function App({ Component, pageProps }) {
       internalLinkComponent={(props) => <Link {...props} />}
       richTextComponents={richTextComponents}
     >
+      <Script 
+        type="text/javascript"
+        src="https://app.termly.io/embed.min.js"
+        data-auto-block="on"
+        data-website-uuid="c838014a-5060-42f6-b7ae-7d69e777173d"
+      ></Script>
+
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-5H4WBKW0B3"
         strategy="afterInteractive"
@@ -74,34 +81,14 @@ export default function App({ Component, pageProps }) {
           gtag('config', 'G-5H4WBKW0B3');
         `}
       </Script>
-      {/* TODO: Remove the following element once you have read the documentation. */}
-      {process.env.NODE_ENV === "development" && (
-        <div
-          style={{
-            background: "#5163ba",
-            padding: "1rem",
-            textAlign: "center",
-            fontSize: "0.85rem",
-            color: "#fff",
-          }}
-        >
-          <p>
-            <strong>👋 Welcome to your new website!</strong> To customize the
-            code and content of this site,{" "}
-            <a
-              href="https://github.com/prismicio-community/nextjs-starter-prismic-blog/tree/master/docs"
-              target="_blank"
-              rel="noreferrer"
-              style={{ textDecoration: "underline" }}
-            >
-              see the documentation
-            </a>
-            . Remove this bar in <code>pages/_app.js</code>.
-          </p>
-        </div>
-      )}
+      
       <PrismicPreview repositoryName={repositoryName}>
         <Component {...pageProps} />
+        <a href="#"
+          onclick="window.displayPreferenceModal();return false;"
+          id="termly-consent-preferences">
+            Consent Preferences
+        </a>
       </PrismicPreview>
     </PrismicProvider>
   );

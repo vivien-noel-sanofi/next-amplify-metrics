@@ -1,16 +1,10 @@
-import Head from "next/head";
-import * as prismicH from "@prismicio/helpers";
-
 import { createClient } from "../prismicio";
-import { Layout } from "../components/Layout";
-import { Bounded } from "../components/Bounded";
-import { Article } from "../components/Article";
+import { BannerHome } from "../components/organism/BannerHome";
 
-const Index = ({ articles, navigation, settings }) => {
+const Index = () => {
   return (
     <div>
-      <h1>Documentation AWS</h1>
-      <p>Generate logs in cloudwatch logs</p>
+      <BannerHome />
     </div>
   );
 };
