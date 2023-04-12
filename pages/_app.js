@@ -61,13 +61,7 @@ export default function App({ Component, pageProps }) {
       internalLinkComponent={(props) => <Link {...props} />}
       richTextComponents={richTextComponents}
     >
-      <Script 
-        type="text/javascript"
-        src="https://app.termly.io/embed.min.js"
-        data-auto-block="on"
-        data-website-uuid="c838014a-5060-42f6-b7ae-7d69e777173d"
-      ></Script>
-
+      <Script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/76d3aa112edf14403cf70ca5/script.js" />
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-5H4WBKW0B3"
         strategy="afterInteractive"
@@ -84,11 +78,6 @@ export default function App({ Component, pageProps }) {
       
       <PrismicPreview repositoryName={repositoryName}>
         <Component {...pageProps} />
-        <a href="#"
-          onclick="window.displayPreferenceModal();return false;"
-          id="termly-consent-preferences">
-            Consent Preferences
-        </a>
       </PrismicPreview>
     </PrismicProvider>
   );
