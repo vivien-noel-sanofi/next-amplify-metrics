@@ -18,7 +18,7 @@ export const BannerHome = () => {
         // GLB image
         const loader = new GLTFLoader();
 
-        loader.load( '/images/parrot.glb', function ( glt ) {
+        loader.load( '/images/human_body.glb', function ( glt ) {
             body = glt.scene;
             body.position.set(0, -2, 0)
 
