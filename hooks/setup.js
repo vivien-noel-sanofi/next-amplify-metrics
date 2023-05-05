@@ -6,12 +6,13 @@ export const setupUniverse = () => {
 
     // setup of the camera
     const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.setY(1);
-    camera.position.setZ(-7);
+    camera.position.setY(0);
+    camera.position.setZ(7);
 
     //setup of the rerender
     const renderer = new THREE.WebGLRenderer({
       canvas: document.querySelector('#bg'),
+      alpha: true
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
